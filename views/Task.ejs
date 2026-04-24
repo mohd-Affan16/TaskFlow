@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tasks - TaskFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-950 min-h-screen text-white overflow-x-hidden">
+     
+  <!-- THE CENTERED GLOW (Matches your Main Page) -->
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -z-10"></div>
+  <div class="fixed top-[40%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[100px] -z-10"></div>
+
+  <!-- Header: Fixed "position: fixed" to Tailwind "fixed" class -->
+  <nav class="fixed top-0 z-50 w-full bg-white/5 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-extrabold text-blue-400 tracking-tight">TaskFlow</h1>
+      <div class="flex items-center gap-6">
+        <span class="text-gray-400 text-sm hidden sm:block">Welcome back!</span>
+        <form action="/logout" method="POST">
+          <button type="submit" class="bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white border border-red-500/50 px-5 py-2 rounded-xl text-sm font-medium transition-all">
+            Logout
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto py-8 px-6 mt-24 relative z-10">
+    <h1 class="text-4xl font-bold text-white mb-8">My Tasks</h1>
+
+    <!-- Add New Task Form: Switched to Glassmorphism -->
+    <form action="/Task" method="POST" class="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-[2rem] shadow-2xl mb-10">
+      <div class="flex flex-col sm:flex-row gap-4">
+        <input type="text" name="title" placeholder="What needs to be done?" 
+               class="flex-1 px-5 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 text-white placeholder-gray-500" required>
+        <button type="submit" 
+                class="bg-blue-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20">
+          Add Task
+        </button>
+      </div>
+    </form>
+
+    <!-- Task List -->
+    <div class="space-y-4">
+      <% if (tasks.length === 0) { %>
+        <div class="text-center py-20 bg-white/5 rounded-[2rem] border border-dashed border-white/10">
+            <p class="text-gray-500">No tasks yet. Add one above!</p>
+        </div>
+      <% } else { %>
+        <% tasks.forEach(task => { %>
+          <!-- Task Card: Dark Glass style -->
+          <div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex justify-between items-center group hover:bg-white/10 transition-all">
+            <div>
+              <h3 class="text-xl font-medium <%= task.status === 'completed' ? 'line-through text-gray-500' : 'text-gray-100' %>">
+                <%= task.title %>
+              </h3>
+              <% if (task.description) { %>
+                <p class="text-gray-400 mt-1 text-sm"><%= task.description %></p>
+              <% } %>
+            </div>
+            
+            <div class="flex gap-3">
+              <% if (task.status !== 'completed') { %>
+                <form action="/Task/<%= task._id %>/complete" method="POST">
+                  <button type="submit" class="bg-emerald-500/10 hover:bg-emerald-500 text-emerald-500 hover:text-white border border-emerald-500/50 px-4 py-2 rounded-lg text-sm transition-all">
+                    Done
+                  </button>
+                </form>
+              <% } %>
+              <form action="/Task/<%= task._id %>/delete" method="POST">
+                <button type="submit" class="bg-white/5 hover:bg-red-500/20 text-gray-400 hover:text-red-400 px-4 py-2 rounded-lg text-sm transition-all">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="/" class="text-gray-500 hover:text-blue-400 transition-colors">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

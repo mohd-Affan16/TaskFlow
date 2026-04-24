@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TaskFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-stone-950 min-h-screen flex items-center justify-center relative overflow-hidden">
+  
+  <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-500 rounded-full blur-[120px] opacity-20"></div>
+  <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-red-500 rounded-full blur-[150px] opacity-30"></div>
+  <!-- CHANGE 2: Updated Card Classes for true glass effect -->
+  <div class="relative z-10 bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4">
+    
+    <!-- CHANGE 3: Switched text colors to white/light blue for better contrast on dark glass -->
+    <h2 class="text-3xl font-bold text-center mb-8 text-white tracking-tight">Login to <span class="text-blue-400">TaskFlow</span></h2>
+    
+    <form action="/login" method="POST">
+      <div class="mb-4">
+        <label class="block text-blue-100/80 text-sm font-medium mb-2">Email</label>
+        <!-- CHANGE 4: Glassy input fields -->
+        <input type="email" name="email" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-white placeholder-white/40" placeholder="Enter your email" required>
+      </div>
+      
+      <div class="mb-6">
+        <label class="block text-blue-100/80 text-sm font-medium mb-2">Password</label>
+        <input type="password" name="password" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 text-white placeholder-white/40" placeholder="Enter password" required>
+      </div>
+      
+      <!-- CHANGE 5: Vibrant button to pop against the glass -->
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold transition-all shadow-lg shadow-blue-600/20">
+        Login
+      </button>
+    </form>
+    
+    <p class="text-center mt-6 text-white/60 text-sm">
+      Don't have an account? <a href="/register" class="text-blue-400 hover:text-blue-300 font-medium">Register here</a>
+    </p>
+  </div>
+</body>
+</html>

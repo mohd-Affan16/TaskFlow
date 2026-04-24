@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-950">
+  
+<div class="relative min-h-screen w-full flex items-center justify-center p-6 overflow-hidden">
+  
+  <!-- Improved Glow: Increased opacity and scale for a "smoother" look -->
+
+  
+  <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-500 rounded-full blur-[120px] opacity-20"></div>
+  <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-red-500 rounded-full blur-[150px] opacity-30"></div>
+
+  <!-- The Card: Switched to bg-white/10 for better glass effect on dark backgrounds -->
+  <div class="relative z-10 w-full max-w-md backdrop-blur-2xl bg-white/10 border border-white/20 rounded-[3rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] text-center">
+    
+    <!-- Title: Brighter blue to pop against the dark bg -->
+    <h1 class="text-6xl font-extrabold text-blue-400 mb-2 tracking-tight">TaskFlow</h1>
+    <p class="text-lg text-gray-300 font-light mb-10">Simple. Clean. Productive.</p>
+
+    <div class="space-y-4">
+      <a href="/login" 
+         class="block w-full bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold py-4 rounded-2xl transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-blue-500/25">
+        Login
+      </a>
+      
+      <!-- Subtle secondary button -->
+      <a href="/signup" 
+         class="block w-full bg-white/10 hover:bg-white/20 text-white text-lg font-medium py-4 rounded-2xl transition-all border border-white/10">
+        Create New Account
+      </a>
+    </div>
+
+    <p class="mt-10 text-sm text-gray-400 uppercase tracking-widest font-medium opacity-60">Already building better habits</p>
+  </div>
+</div>
+</body>
+</html>
