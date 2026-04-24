@@ -102,7 +102,7 @@ server.post('/signup', async (req, res) => {
 
     console.log("✅ New user saved successfully:", email);
         // Add this line inside the logic after finding/saving the user
-    req.session.userId = user._id; 
+    req.session.userId = newUser._id; 
     res.redirect('/Task');
 
     // res.redirect('/Task');
@@ -115,66 +115,6 @@ server.post('/signup', async (req, res) => {
 
 // ==================== TASK ROUTES ====================
 
-// server.get('/Task', async (req, res) => {
-//   try {
-//     const tasks = await Task.find({}).sort({ createdAt: -1 });
-//     res.render('Task', { tasks });     // Passing tasks data
-//   } catch (error) {
-//     console.log("Error fetching tasks:", error.message);
-//     res.send("Error loading tasks");
-//   }
-// });
-// Get tasks for the logged-in user
-
-// server.get('/Task', async (req, res) => {
-//   try {
-//     // For now, show all tasks (we'll filter by user later)
-//     const tasks = await Task.find({}).sort({ createdAt: -1 });
-//     res.render('Task', { tasks });
-//   } catch (error) {
-//     console.log("Error fetching tasks:", error.message);
-//     res.send("Error loading tasks");
-//   }
-// });
-
-// server.post('/Task', async (req, res) => {
-//   try {
-//     const { title, description } = req.body;
-
-//     const newTask = new Task({
-//       title: title,
-//       description: description || ""
-//     });
-
-//     await newTask.save();
-//     res.redirect('/Task');
-//   } catch (error) {
-//     console.log("Error creating task:", error.message);
-//     res.send("Error creating task");
-//   }
-// });
-// Create new task (now tied to logged-in user)
-// For now we use a simple way - we'll improve session later
-// server.post('/Task', async (req, res) => {
-//   try {
-//     const { title, description } = req.body;
-
-//     // Temporary: Using a fixed user ID for testing
-//     // Later we'll get the actual logged-in user
-//     const newTask = new Task({
-//       user: "67f8c8d8a8b9c8d8e8f8a8b9",   // Replace with real user ID later
-//       title: title,
-//       description: description || ""
-//     });
-
-//     await newTask.save();
-//     console.log("✅ Task created successfully:", title);
-//     res.redirect('/Task');
-//   } catch (error) {
-//     console.log("Error creating task:", error.message);
-//     res.send("Error creating task");
-//   }
-// });
 // GET /Task
 server.get('/Task', async (req, res) => {
   if (!req.session.userId) return res.redirect('/login'); // Shield the page
@@ -218,7 +158,7 @@ server.post('/logout', (req, res) => {
   res.redirect('/');
 });
 // Start server
-const port = 3000;
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`✅ Taskflow is running at http://localhost:${port}`);
 });
