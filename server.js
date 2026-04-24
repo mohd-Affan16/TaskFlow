@@ -22,7 +22,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 const session = require('express-session'); // Install this: npm install express-session
 
 server.use(session({
-  secret: 'taskflow-secret',
+  secret: process.env.SESSION_SECRET ||'taskflow-secret',
   resave: false,
   saveUninitialized: false
 }));
