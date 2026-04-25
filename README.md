@@ -24,7 +24,7 @@ Live Demo: [https://taskflow-1vri.onrender.com](https://taskflow-1vri.onrender.c
 ## Project Structure
 
 ```
-TaskFlow/ \n
+TaskFlow/ 
 ├── views/              # EJS templates
 │   ├── login.ejs
 │   ├── signup.ejs
@@ -76,6 +76,7 @@ Biggest challenge was debugging MongoDB connection issues and understanding how 
 
 5. Open your browser and go to `http://localhost:3000`
 
+
 ## Future Improvements
 
 - Better authentication (password hashing, sessions/JWT)
@@ -83,3 +84,16 @@ Biggest challenge was debugging MongoDB connection issues and understanding how 
 - Dark/Light mode toggle
 - Task search and filtering
 - User profile page
+
+##Project images
+#Welcome Page
+<img width="1920" height="962" alt="Screenshot 2026-04-23 224649" src="https://github.com/user-attachments/assets/f94f072f-c251-41e6-92b4-07e49fec55ca" />
+#Login Page
+ <img width="1920" height="974" alt="Screenshot 2026-04-23 224636" src="https://github.com/user-attachments/assets/6780156f-bbe7-4943-930a-dd46b04abff9" />
+#Sginup Page
+<img width="1920" height="981" alt="Screenshot 2026-04-23 224700" src="https://github.com/user-attachments/assets/2daa52fa-7d41-4a33-9eef-2f0edfd0b7d1" />
+#Home Page
+<img width="1919" height="974" alt="Screenshot 2026-04-25 121357" src="https://github.com/user-attachments/assets/96367189-77ae-4259-aa72-ae1c977fa223" />
+
+
+
