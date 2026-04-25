@@ -85,23 +85,24 @@ Biggest challenge was debugging MongoDB connection issues and understanding how 
 - Task search and filtering
 - User profile page
 
-# Project images
 
-## 1.Welcome Page
+#  Project Preview
 
-<img width="1920" height="962" alt="Screenshot 2026-04-23 224649" src="https://github.com/user-attachments/assets/f94f072f-c251-41e6-92b4-07e49fec55ca" />
+<details>
+  <summary><b>Click to expand screenshots</b></summary>
+  <br>
 
-## 2.Login Page
+  ### 1. Welcome Page
+  <img width="100%" alt="Welcome Page" src="https://github.com/user-attachments/assets/f94f072f-c251-41e6-92b4-07e49fec55ca" />
 
- <img width="1920" height="974" alt="Screenshot 2026-04-23 224636" src="https://github.com/user-attachments/assets/6780156f-bbe7-4943-930a-dd46b04abff9" />
- 
-## 3.Sginup Page
+  ### 2. Login Page
+  <img width="100%" alt="Login Page" src="https://github.com/user-attachments/assets/6780156f-bbe7-4943-930a-dd46b04abff9" />
 
-<img width="1920" height="981" alt="Screenshot 2026-04-23 224700" src="https://github.com/user-attachments/assets/2daa52fa-7d41-4a33-9eef-2f0edfd0b7d1" />
+  ### 3. Signup Page
+  <img width="100%" alt="Signup Page" src="https://github.com/user-attachments/assets/2daa52fa-7d41-4a33-9eef-2f0edfd0b7d1" />
 
-## 4.Home Page
+  ### 4. Home Page
+  <img width="100%" alt="Home Page" src="https://github.com/user-attachments/assets/96367189-77ae-4259-aa72-ae1c977fa223" />
 
-<img width="1919" height="974" alt="Screenshot 2026-04-25 121357" src="https://github.com/user-attachments/assets/96367189-77ae-4259-aa72-ae1c977fa223" />
-
-
+</details>
 
